@@ -28,6 +28,7 @@ button {
 #wrapper {
     padding: 30px;
     max-width: 670px;
+    max-height: 670px;
 }
 
 .tile {
@@ -35,8 +36,8 @@ button {
     float: left;
     border: 1px solid;
     padding: 1em;
-    width: 6px;
-    height: 6px;
+    width: auto;
+    height: auto;
 }
 
 
@@ -44,6 +45,3 @@ button {
     background-color: coral;
 }
 
-.activated {
-    background-color: aquamarine;
-}
