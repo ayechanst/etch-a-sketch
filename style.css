@@ -25,10 +25,12 @@ button {
     background-color: palegreen;
 }
 
-#wrapper {
+#container {
     padding: 30px;
     max-width: 670px;
     max-height: 670px;
+    display: grid;
+    grid-template-columns: ''; 
 }
 
 .tile {
