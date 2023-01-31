@@ -2,6 +2,10 @@
 
 const divContainer = document.getElementById('container');
 const button = document.getElementById('btn');
+const delGrid = document.getElementById('clear')
+const blueBtn = document.querySelector('.blue');
+const redBtn = document.querySelector('.red');
+const whiteBtn = document.querySelector('.white');
 
 //helper functions
 
@@ -31,10 +35,10 @@ makeGrid(16);
 
 //end helper functions
 
-
-button.addEventListener('click', function() {        
+let currentGridLength = 16;
+button.addEventListener('click', function() {                                       //request new grid function
     let gridLength = prompt('How many squares long should the square grid be?');
-    console.log('hello?');
+    currentGridLength = gridLength;
     if (gridLength > 100) {
         return makeGrid(100);
     }
@@ -43,13 +47,36 @@ button.addEventListener('click', function() {
     }
 })
 
+delGrid.addEventListener('click', () => {                                      //clears grid
+    deleteGrid();
+    makeGrid(currentGridLength);
+})
+
+
+let paintBrushColor = 'lightBlue';                                   //color changing logic
+blueBtn.addEventListener('click', () => {
+    console.log('click');
+    paintBrushColor = 'lightBlue';
+})
+
+redBtn.addEventListener('click', () => {
+    console.log('click');
+    paintBrushColor = 'paleVioletRed';
+})
+
+whiteBtn.addEventListener('click', () => {
+    console.log('click');
+    paintBrushColor = 'whiteSmoke';
+})
+
 function addListenerToTiles(tiles) {
     tiles.forEach((tile) => {
-        tile.addEventListener("mouseover", function(e) {
-            tile.style.background = 'blue';
-            console.log(e);
+        tile.addEventListener("mouseover", function() {
+            tile.style.background = `${paintBrushColor}`;         
         })
     })
 }
+
+
 
 //``
