@@ -8,7 +8,7 @@ const button = document.getElementById('btn');
 function deleteGrid() {
     const tiles = document.querySelectorAll('.tile');
     tiles.forEach((tile) => {
-        tile.remove();
+        tile.remove()
     })                                 
 }
 

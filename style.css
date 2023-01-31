@@ -25,27 +25,29 @@ button {
     background-color: palegreen;
 }
 
+.container-parent {
+    display: flex;
+    max-width: 500px;
+    max-height: 500px;
+    flex-flow: row;
+}
+
 #container {
     padding: 30px;
-    max-width: 670px;
-    max-height: 670px;
     display: grid;
-    grid-template-columns: repeat(16, 1fr); 
+    grid-template-columns: repeat(16, 1fr);
+    max-width: 500px;
+    max-height: 500px;
+    min-width: 500px;
+    min-height: 500px;
 }
 
 .tile {
-    display: grid;
-    float: left;
     border: 1px solid;
-    padding: 1em;
-    width: auto;
-    height: auto;
-    max-width: 1fr;
-    max-height: 1fr;
-}
-
-
-.tile:hover {
-    background-color: coral;
+    width: 100%;
+    height: 100%;
+    padding: auto;
+    display: flex;
+    
 }
 
