@@ -30,7 +30,7 @@ button {
     max-width: 670px;
     max-height: 670px;
     display: grid;
-    grid-template-columns: ''; 
+    grid-template-columns: repeat(16, 1fr); 
 }
 
 .tile {
@@ -40,6 +40,8 @@ button {
     padding: 1em;
     width: auto;
     height: auto;
+    max-width: 1fr;
+    max-height: 1fr;
 }
 
 

@@ -23,19 +23,18 @@ function makeGrid(gridLength) {
         newDiv.appendChild(newContent);
         divContainer.appendChild(newDiv);
     }
-    container.style.gridTemplateColumns = repeat(`${gridLength}`, `${1}px`);
+    const tiles = document.querySelectorAll('.tile');
+    addListenerToTiles(tiles);   
+    container.style.gridTemplateColumns = `repeat(${gridLength}, 1fr)`;
 }
-makeGrid(6);
-const tiles = document.querySelectorAll('.tile');   
+makeGrid(16);
 
 //end helper functions
 
-console.log(tiles);
 
-
-
-button.addEventListener('click', function askGrid() {        //function that asks grid size and deletes old
+button.addEventListener('click', function() {        
     let gridLength = prompt('How many squares long should the square grid be?');
+    console.log('hello?');
     if (gridLength > 100) {
         return makeGrid(100);
     }
@@ -44,21 +43,13 @@ button.addEventListener('click', function askGrid() {        //function that ask
     }
 })
 
-
-tiles.forEach((tile) => {
-    tile.addEventListener("mouseover", function(e) {
-        tile.style.background = 'blue';
-        console.log(e);
+function addListenerToTiles(tiles) {
+    tiles.forEach((tile) => {
+        tile.addEventListener("mouseover", function(e) {
+            tile.style.background = 'blue';
+            console.log(e);
+        })
     })
-})
+}
 
-
-//make grid area stay the same size
-//make grid retain color
-//makes grid delete itself when making a new grid
-
-
-
-
-
-//  IIIII ``
+//``
